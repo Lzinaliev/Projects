@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> <!-- Устанавливаем кодировку UTF-8 -->
+    <title>Страница авторизации</title>
+    <style>
+        /* Стилизация фона страницы и шрифта */
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Стилизация контейнера для авторизации */
+        .login-container {
+            width: 300px;
+            margin: 100px auto 0; /* Отступы: сверху 10px, по бокам авто, снизу 0 */
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стилизация заголовка контейнера авторизации */
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Стилизация групп полей ввода */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        /* Стилизация подписей к полям ввода в группах */
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Стилизация полей ввода в группах */
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Подстройка левого отступа для полей ввода */
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            margin-left: -4px; /* Сдвиг поля ввода влево на 4 пикселя */
+        }
+
+        /* Стилизация кнопки авторизации */
+        .button {
+            width: 100%;
+            padding: 8px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Стилизация кнопки авторизации при наведении */
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        /* Стилизация кнопки авторизации при нажатии */
+        .button:active {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Авторизация</h2>
+        <form>
+            <!-- Группа полей для имени пользователя -->
+            <div class="input-group">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <!-- Группа полей для пароля -->
+            <div class="input-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <!-- Кнопка авторизации -->
+            <button class="button" type="submit">Войти</button>
+        </form>
+    </div>
+</body>
+</html>
