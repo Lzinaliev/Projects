@@ -1,17 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
-
+c = 0
 # Запросить содержимое страницы
-url = "https://m.avito.ru/ekaterinburg/doma_dachi_kottedzhi/sdam/na_dlitelnyy_srok-ASgBAgICAkSUA9IQoAjIVQ?context=H4sIAAAAAAAAA0u0MrKqLraysFJKK8rPDUhMT1WyhnBTE0tKi1JTQFxDAyulksSi9NQSmAJzQyulC7Mu7Luw52LLhX0XGy42Xdh7sfvCVoULW0CCFzYoXNh0aMGFDRcbLmy9sPfClovNOgoX5gOldl3YcGE7ULzpYg9QycXGC1uVrGsBxCDoyoUAAAA&f=ASgBAQICAkSUA9IQoAjIVQJAkL0ORPak0QH0pNEB8qTRAfCk0QGUvQ4U~KTRAQ&radius=0&s=104&presentationType=serp"
-response = requests.get(url)
-content = response.text
+url = 'https://www.avito.ru/ekaterinburg/tovary_dlya_kompyutera/dzhoystiki_i_ruli-ASgBAgICAUTGB7ZO?cd=1&q=%D0%B3%D0%B5%D0%B9%D0%BC%D0%BF%D0%B0%D0%B4'
+requests = requests.get(url)
+bs = BeautifulSoup(requests.text, 'html.parser')
 
-# Создать объект BeautifulSoup
-soup = BeautifulSoup(content, "html.parser")
+all_links = bs.find_all('a', class_='iva-item-sliderLink-uLz1v')
 
-# Найти заголовки новостей
-titles = soup.find_all("p", class_="V6MvH KSyZc")
-
-# Вывести заголовки новостей
-for title in titles:
-    print(title.get_text(strip=True))
+for link in all_links:
+    print("avito.ru"+link["href"])
