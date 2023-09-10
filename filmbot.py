@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-TOKEN = '6425047705:AAHNSoNs317zOA0hX0ClLReGNvWc-6ngvRY'
+TOKEN = ''
 bot = telebot.TeleBot(TOKEN)
 
 # Define the channel IDs

@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 from kinopoisk.movie import Movie
 
-TOKEN = '6425047705:AAHNSoNs317zOA0hX0ClLReGNvWc-6ngvRY'
+TOKEN = ''
 bot = telebot.TeleBot(TOKEN)
  
 @bot.message_handler(commands=['start'])

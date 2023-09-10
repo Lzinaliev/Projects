@@ -1,7 +1,7 @@
 import telebot
 
 
-bot = telebot.TeleBot('6156372105:AAGc5GnmGVqX_tocXejkDPB7IIFcn35fsas')
+bot = telebot.TeleBot('')
 id_chanel = '@WbTreasures41'
 
 @bot.message_handler(content_types=['text'])

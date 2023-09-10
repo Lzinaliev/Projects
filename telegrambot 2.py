@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot("6679473191:AAG2TUz6Sb92doBDGH4R5CLkDfgyHYTBxNw")
+bot = telebot.TeleBot("")
 
 #рвбота с инлайн кнопками, их размешение и т.д
 @bot.message_handler(content_types='photo')

@@ -2,7 +2,7 @@ import telebot
 import requests
 from bs4 import BeautifulSoup
 
-token = '6679473191:AAG2TUz6Sb92doBDGH4R5CLkDfgyHYTBxNw'
+token = ''
 bot = telebot.TeleBot(token)
 
 url = 'https://www.cnbc.com/technology/'

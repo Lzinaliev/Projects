@@ -5,7 +5,7 @@ import os
 
 
 
-bot = telebot.TeleBot('6408678536:AAFcpf8CrHcnwlmajiZOtKrn60DP8KRCBW8')
+bot = telebot.TeleBot('')
 
 @bot.message_handler(commands=['start'])
 def start(message):
