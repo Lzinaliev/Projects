@@ -4,11 +4,11 @@ from telebot import types
 TOKEN = ''
 bot = telebot.TeleBot(TOKEN)
 
-# Define the channel IDs
-channel_id1 = -1001707086519  # Replace with the ID of your first channel
-channel_id2 = -1001962601108  # Replace with the ID of your second channel
 
-# Track users who clicked "Confirm" button
+channel_id1 = -1001707086519  
+channel_id2 = -1001962601108  
+
+
 confirmed_users = set()
 
 @bot.message_handler(commands=['start'])
@@ -30,22 +30,22 @@ def send_subscription_check(chat_id):
     if subscribed_channel1 and subscribed_channel2:
         send_message_after_subscription_check(chat_id)
     else:
-        markup = types.InlineKeyboardMarkup(row_width=2)  # Set row_width to 2 for two columns
+        markup = types.InlineKeyboardMarkup(row_width=2)  
         sponsor1_button = types.InlineKeyboardButton("Спонсор №1", url='https://t.me/WbTreasures41')
         sponsor2_button = types.InlineKeyboardButton("Спонсор №2", url='https://t.me/CoinTraderPro15')
         confirm_button = types.InlineKeyboardButton("Подтвердить", callback_data='confirm')
         markup.add(sponsor1_button, sponsor2_button)
-        markup.add(confirm_button)  # Add the confirm button in a separate row
+        markup.add(confirm_button)  
         bot.send_message(chat_id, "Сначала вам нужно подписаться на оба канала", reply_markup=markup)
 
 
 def send_message_after_subscription_check(chat_id):
-    markup = types.InlineKeyboardMarkup(row_width=2)  # Set row_width to 2 for two columns
+    markup = types.InlineKeyboardMarkup(row_width=2) 
     sponsor1_button = types.InlineKeyboardButton("Спонсор №1", url='https://t.me/WbTreasures41')
     sponsor2_button = types.InlineKeyboardButton("Спонсор №2", url='https://t.me/CoinTraderPro15')
     confirm_button = types.InlineKeyboardButton("Подтвердить✅", callback_data='confirm')
     markup.add(sponsor1_button, sponsor2_button)
-    markup.add(confirm_button)  # Add the confirm button in a separate row
+    markup.add(confirm_button) 
     bot.send_message(chat_id, "Прежде чем воспользоваться ботом, подпишитесь на наших спонсоров и нажмите кнопку \"Подтвердить✅\", чтобы продолжить.", reply_markup=markup)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'confirm')
@@ -75,10 +75,10 @@ def handle_code_message(message):
 
 
 
-# Function to check user's subscription to channels
+
 def check_subscription(user_id, channel_id):
     try:
-        chat_member = bot.get_chat_member(channel_id, user_id)  # Check if the user is a member of the channel
+        chat_member = bot.get_chat_member(channel_id, user_id) 
         return chat_member.status == 'member' or chat_member.status == 'creator'
     except telebot.apihelper.ApiException:
         return False
