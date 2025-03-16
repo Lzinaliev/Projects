@@ -5,9 +5,10 @@ from telebot import types
 
 TOKEN = ''  
 bot = telebot.TeleBot(TOKEN)
-url = "https://www.twitch.tv/xaney96"
+url = "https://www.twitch.tv/" #здесь необходимо вставить ник стримера
 streamer = url
 
+#проверяет запущен стрим или нет, проблема в постоянной проверке
 def is_online():
         url = streamer
         response = requests.get(url)
