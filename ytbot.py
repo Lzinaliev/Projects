@@ -24,22 +24,14 @@ def link_text(message):
         link = message.text
         yt = YouTube(link)
         video = yt.streams.get_highest_resolution()
-        # Получение размера видео
         video_size = video.filesize
-        # Скачивание видео
         video.download(output_path='', filename='2.mp4')
-        # Отправка сообщения о начале скачивания
         bot.send_message(message.chat.id, "Видео началось скачиваться...")
-        # Ожидание, пока файл полностью скачается
         while os.path.getsize('2.mp4') != video_size:
             pass
-        # Отправка видео пользователю
         with open('2.mp4', 'rb') as video_file:
             bot.send_video(message.chat.id, video_file)
-        # Удаление временного файла
         os.remove('2.mp4')
-
     except Exception as e:
         bot.reply_to(message, "Ошибка при скачивании видео: " + str(e))
-
 bot.polling(none_stop=True)
